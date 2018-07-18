@@ -9,18 +9,18 @@ class TestGame < Minitest::Test
 
   def test_play__rock_rock()
     @game = Game.new( "rock", "rock")
-    assert_equal("draw", @game.play)
+    assert_equal("nobody", @game.play)
   end
 
-  # def test_play__scissors_scissors()
-  #   @game = Game.new( "scissors", "scissors")
-  #   assert_equal("draw", @game.play)
-  # end
-  #
-  # def test_play__paper_paper()
-  #   @game = Game.new( "paper", "paper")
-  #   assert_equal("draw", @game.play)
-  # end
+  def test_play__scissors_scissors()
+    @game = Game.new( "scissors", "scissors")
+    assert_equal("nobody", @game.play)
+  end
+
+  def test_play__paper_paper()
+    @game = Game.new( "paper", "paper")
+    assert_equal("nobody", @game.play)
+  end
 
   def test_play__rock_scissors()
     @game = Game.new( "rock", "scissors")

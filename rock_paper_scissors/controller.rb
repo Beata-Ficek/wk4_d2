@@ -7,19 +7,20 @@ also_reload('./models/*')
 
 get '/:first_throw/:second_throw' do
   game = Game.new(params[:first_throw], params[:second_throw])
+  @game_result = game.play
   # game.play()
-  @winner = game.winner
-  @result = game.result
+  # # @winner = game.winner
+  # @result = game.result
   erb :result
 end
 
-get '/random/:second_throw' do
-  game = Game.new(params[:first_throw], params[:second_throw])
-  # # game.play()
-  # @winner = game.winner
-  # @result = game.result
-  # erb :result
-end
+# get '/:first_throw/:second_throw' do
+#   game = Game.new(params[:first_throw], params[:second_throw])
+#   game.play()
+#   @winner = game.winner
+#   @result = game.result
+#   erb :result
+# end
 
 get '/instructions' do
   erb :instructions
